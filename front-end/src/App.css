@@ -1,0 +1,39 @@
+.form {
+  margin:24px auto;
+  width:500px;
+  display: flex;
+  flex-direction: column;
+}
+.form h3 {
+  align-self: center;
+  font-weight: bold;
+}
+.form .inputs {
+  display: flex;
+  margin: 3px;
+  padding:2px;
+  flex-direction: column;
+}
+.form button {
+  border:none;
+  border-radius:5px;
+  width:90px;
+  height:20px;
+  font-weight: 800;
+  padding:4px auto;
+  background: cyan;
+  margin-top:4px;
+}
+.inputs label {
+font-weight: 700;
+ margin:6px 0;
+}
+.inputs input {
+  border-radius:3px;
+  border:1px solid silver;
+  outline: none;
+  padding:10px;
+}
+input:focus {
+  box-shadow: 0 2px darkturquoise;
+}
