@@ -14,16 +14,6 @@
   padding:2px;
   flex-direction: column;
 }
-.form button {
-  border:none;
-  border-radius:5px;
-  width:90px;
-  height:20px;
-  font-weight: 800;
-  padding:4px auto;
-  background: cyan;
-  margin-top:4px;
-}
 .inputs label {
 font-weight: 700;
  margin:6px 0;
@@ -34,6 +24,14 @@ font-weight: 700;
   outline: none;
   padding:10px;
 }
-input:focus {
-  box-shadow: 0 2px darkturquoise;
+.submit_button{
+   display: flex;
+   margin-top: 15px;
+   justify-content: center;
+}
+.errors{
+  color: red;
+}
+.button{
+  width: 120px;
 }
