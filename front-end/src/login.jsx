@@ -22,6 +22,7 @@ const Login = () => {
     const[email,setEmail]= useState('')
     const[setpassword,setPassword]= useState('')
     const[password,setConfirmPassword]= useState('')
+    const[registered,setRegistered]= useState(false)
   
   const {register,handleSubmit,formState:{errors}}=useForm({
      resolver:yupResolver(schema)
@@ -37,10 +38,15 @@ const Login = () => {
       email,
       confirm_passwrd
     })
-    console.log(response)
+     if(response.data.name){
+        setRegistered(true)
+     }
   };
   return (
     <form className="form" onSubmit={handleSubmit(Submit)}>
+      <div className="form-massage">
+         {registered && <h2 className="message" >Registered Successfully</h2>}
+      </div>
       <h3>SIGNUP FORM</h3>
       <div className="inputs">
         <label htmlFor="name">Name</label>
@@ -48,6 +54,7 @@ const Login = () => {
           type="text"
           name="name"
           placeholder="Enter your name ..."
+          autoComplete="off"
           onChange={(e)=>setName(e.target.value)}
           {...register('name')}
         />
@@ -58,6 +65,7 @@ const Login = () => {
         <input
           type="text"
           name="phone_num"
+          autoComplete="off"
           placeholder="Enter mobile number ..."
           onChange={(e)=>setPhone(e.target.value)}  
           {...register('phone_num')}
@@ -71,6 +79,7 @@ const Login = () => {
         <input
           type="email"
           name="email"
+          autoComplete="off"
           placeholder="Enter your email ..."
           onChange={(e)=>setEmail(e.target.value)}
           
@@ -82,9 +91,9 @@ const Login = () => {
       <div className="inputs">
         <label htmlFor="pswrd">New Password</label>
         <input
-          type="text"
+          type="password"
           name="pswrd"
-          
+          autoComplete="off"
           placeholder="Enter you new password..."
           
           onChange={(e)=>setPassword(e.target.value)}
@@ -97,8 +106,9 @@ const Login = () => {
       <div className="inputs">
         <label htmlFor="confirm_password">Confirm Password</label>
         <input
-          type="text"
+          type="password"
           name="confirm_password"
+          autoComplete="off"
           placeholder="Confirm your password..."
           onChange={(e)=>setConfirmPassword(e.target.value)}
           

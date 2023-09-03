@@ -9,7 +9,7 @@ require('dotenv/config')
 app.use(express.json())
 app.use(cors({
     credentials:true,
-    origin:'http://localhost:5173',
+    origin:'http://localhost:5174',
     
 }))
 
@@ -35,7 +35,6 @@ app.get('/test',(req,res)=>{
 })
 app.post('/register',async(req,res)=>{
     const {name,email,phone_num,confirm_passwrd} = req.body
-    console.log(phone_num)
     try{
        const checkExistingUser = await User.findOne({email:email})
        if(checkExistingUser){
