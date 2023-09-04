@@ -1,16 +1,17 @@
 .form {
-  margin:24px auto;
-  width:500px;
+  margin: 24px auto;
+  width: 500px;
   display: flex;
   flex-direction: column;
+  transition:all .3s;
 }
-.form-message{
+.form-message {
   display: flex;
   justify-content: center;
 }
-.message{
-   margin-left: 70px;
-   color: red;
+.message {
+  margin-left: 70px;
+  color: red;
 }
 .form h3 {
   align-self: center;
@@ -18,28 +19,103 @@
 }
 .form .inputs {
   display: flex;
-  margin: 3px;
-  padding:2px;
+  margin: 2px;
+  padding: 2px 2px;
   flex-direction: column;
 }
 .inputs label {
-font-weight: 700;
- margin:6px 0;
+  font-weight: 700;
+  margin: 6px 0;
 }
 .inputs input {
-  border-radius:3px;
-  border:1px solid silver;
+  border-radius: 3px;
+  border: 1px solid silver;
   outline: none;
-  padding:10px;
+  padding: 10px;
 }
-.submit_button{
-   display: flex;
-   margin-top: 15px;
-   justify-content: center;
+.inputs input:focus {
+  box-shadow:0 2px 2px skyblue;
 }
-.errors{
+.submit_button {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+}
+.errors {
   color: red;
 }
-.button{
+.button {
   width: 120px;
+}
+/* login form styling*/
+.login {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+}
+.login h3 {
+  align-self: center;
+  font-weight: bold;
+}
+.login input {
+  margin: 20px 3px;
+  border-radius: 3px;
+  border: 1px solid silver;
+  outline: none;
+  padding: 10px;
+}
+ .login input:focus {
+  box-shadow:0 2px 2px skyblue;
+}
+.login .loginBtn {
+  background-color: green;
+  padding: 3px;
+  height: 32px;
+  margin: 10px 3px 3px 3px;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 16px;
+}
+.login p {
+  padding-right: 10px;
+  margin: -30px 6px;
+  color: black;
+}
+p button {
+  border: none;
+  color: whitesmoke;
+  margin-left: 8px;
+  background: dodgerblue;
+  border-radius: 3px;
+  font-size: large;
+}
+@media screen and (max-width:780px) {
+body {
+background-color: aliceblue;
+  }
+.form {
+  width:80%;
+}
+.form .inputs {
+margin-left:35px;
+}
+.inputs input  {
+  width:75%;
+}
+.login {
+  width:90%;
+} 
+.login p {
+  align-self: center;
+}
+  
+}
+@media screen and (min-width:782px){
+  .form {
+    width:500px;
+  }
+  .login {
+    width:300px;
+  }
 }
