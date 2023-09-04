@@ -59,14 +59,22 @@
   font-weight: bold;
 }
 .login input {
-  margin: 20px 3px;
+  margin: 10px 3px;
   border-radius: 3px;
+  width: 410px;
   border: 1px solid silver;
   outline: none;
   padding: 10px;
 }
  .login input:focus {
   box-shadow:0 2px 2px skyblue;
+}
+.login h2{
+  margin-left: 90px;
+  color:red
+}
+.login h4{
+  color: red;
 }
 .login .loginBtn {
   background-color: green;
@@ -76,6 +84,10 @@
   color: whitesmoke;
   font-weight: bold;
   font-size: 16px;
+}
+.login_account{
+  display: flex;
+  justify-content: center;
 }
 .login p {
   padding-right: 10px;

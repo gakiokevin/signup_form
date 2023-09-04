@@ -30,9 +30,7 @@ useUnifiedTopology: true,
 //import the user Model
 const User = require('./Registration Model/UserModel.js')
 // creating registration api end point
-app.get('/test',(req,res)=>{
-    res.json('success')
-})
+
 app.post('/register',async(req,res)=>{
     const {name,email,phone_num,confirm_passwrd} = req.body
     try{
@@ -52,5 +50,23 @@ app.post('/register',async(req,res)=>{
         console.log(e)
     }
 })
+app.post('/login',async(req,res)=>{
+    const {Email,Password}=req.body;
+    try{
+        const checkUser = await User.findOne({email:Email})
+        if(checkUser){
+            const validatePassword = bcrypt.compareSync(Password,checkUser.password)
+            if(validatePassword){
+               return res.json(checkUser)
+            }else{
+               return res.json('Invalid Password')
+            }
 
+        }else{
+           return res.json('Invalid Email')
+        }
+    }catch(e){
+        res.json(e)
+    }
+})
 
