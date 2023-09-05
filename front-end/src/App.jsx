@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import RegisterUser from "./Register";
+import {BrowserRouter,Routes,Route}from 'react-router-dom'
+import HomePage from "./HomePage";
 import Login from "./Login";
 import "./App.css";
 
 function App() {
-  const [isActive, setActive] = useState(true);
-  const activeTab = () => {
-    setActive(false);
-  };
 
   return (
-    <div className="App">
-      {isActive ? <Login onclick={activeTab} /> : <RegisterUser />}
-    </div>
+   <>
+       <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login/>}/>
+            <Route path="signup" element={<RegisterUser/>}/>
+            <Route path="homepage" element={<HomePage/>}/>
+          </Routes>
+       </BrowserRouter>
+   </>
   );
 }
 

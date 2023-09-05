@@ -70,17 +70,18 @@
   box-shadow:0 2px 2px skyblue;
 }
 .login h2{
-  margin-left: 90px;
+  margin-left: 110px;
   color:red
 }
 .login h4{
   color: red;
 }
-.login .loginBtn {
+.loginBtn {
   background-color: green;
+  width: 426px;
   padding: 3px;
   height: 32px;
-  margin: 10px 3px 3px 3px;
+  margin: 10px 3px ;
   color: whitesmoke;
   font-weight: bold;
   font-size: 16px;
@@ -88,6 +89,10 @@
 .login_account{
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.no_account{
+  margin-right: 10px;
 }
 .login p {
   padding-right: 10px;

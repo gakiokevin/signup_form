@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Navigate, useNavigate,Link} from 'react-router-dom'
 import * as yup from 'yup'
 import axios from 'axios'
 import {useForm} from 'react-hook-form'
@@ -7,10 +8,11 @@ const schema = yup.object().shape({
   Email:yup.string().email().required(),
   Password:yup.string().min(4).required()
 })
-const Login = ({ onclick }) => {
+const Login = () => {
   const {register,handleSubmit,formState:{errors}} = useForm({
     resolver:yupResolver(schema)
   })
+  const navigate = useNavigate();
   const [data,setData] = useState('')
   const [error,setError]= useState(false)
   const [email,setEmail] = useState('');
@@ -25,8 +27,14 @@ const Login = ({ onclick }) => {
         Password
      })
      console.log(response)
+       const delay = 1000;
+       
        if(response.data.name){
          setShow(true)
+           const timerId = setTimeout(()=>{
+               navigate('/homepage')
+           },delay)
+           return ()=>clearTimeout(timerId)
        }else{
         setError(true)
            setData(response.data)
@@ -34,8 +42,6 @@ const Login = ({ onclick }) => {
     }catch(e){
       console.log(e)
     }
-   
-   
   }
   return (
     <div>
@@ -60,9 +66,12 @@ const Login = ({ onclick }) => {
         <button className="loginBtn" type="submit">Login</button>
       </form>
        <div className="login_account">
-       <p >
-        No account yet?<button onClick={onclick}>Sign Up</button>
-      </p>
+        <div>
+             <p className="no_account">No account yet?</p>
+        </div>
+        <div>
+           <Link to='/signup'>Signup</Link>
+        </div>
      </div>
     </div>
   );
