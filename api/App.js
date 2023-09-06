@@ -9,8 +9,12 @@ require('dotenv/config')
 app.use(express.json())
 app.use(cors({
     credentials: true,
+    methods:["POST", "GET"]
     
 }))
+app.get("/",(req,res)=>{
+    req.json('Hello")
+})
 
 //connecting to MongoDatabase   
 mongoose.connect(process.env.connection_string,{
