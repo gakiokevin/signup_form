@@ -9,6 +9,7 @@ require('dotenv/config')
 app.use(express.json())
 app.use(cors({
     credentials: true,
+    method: post,
     
 }))
 
