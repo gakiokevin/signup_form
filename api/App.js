@@ -12,7 +12,9 @@ app.use(cors({
     methods:["POST", "GET"]
     
 }))
-
+app.get("/",()req,res)=>{
+    res.json()
+})
 
 //connecting to MongoDatabase   
 mongoose.connect(process.env.connection_string,{
