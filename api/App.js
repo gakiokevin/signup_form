@@ -8,8 +8,7 @@ require('dotenv/config')
 // setting up some middlewares
 app.use(express.json())
 app.use(cors({
-    credentials:true,
-    origin:'http://localhost:5173',
+    credentials: true,
     
 }))
 
@@ -20,7 +19,7 @@ useNewUrlParser: true,
 useUnifiedTopology: true,
 
 }).then(()=>{
-    console.log('connected succssfully to MongoDb')
+    console.log('connected successfully to MongoDb')
     app.listen(5500,console.log('Server running on port 5500...'))
     
 }).catch((error)=>{
@@ -29,7 +28,7 @@ useUnifiedTopology: true,
 
 //import the user Model
 const User = require('./Registration Model/UserModel.js')
-// creating registration api end point
+// creating registration api endpoint
 
 app.post('/register',async(req,res)=>{
     const {name,email,phone_num,confirm_passwrd} = req.body
