@@ -13,7 +13,7 @@ app.use(cors({
     
 }))
 app.get('/',(req,res)=>{
-    res.json({message:'Hello'})
+    res.json('begin your magic')
 })
 //connecting to MongoDatabase   
 mongoose.connect(process.env.connection_string,{
